@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.9)
+# you can change cmake version if your version is lower than this,
+cmake_minimum_required(VERSION 3.8)
 project(WaveParser C)
 
 set(CMAKE_C_STANDARD 11)
