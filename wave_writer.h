@@ -16,4 +16,12 @@ void write_header(FILE *f, WaveHeader *header);
 
 void write_data(FILE *f, WaveData *data);
 
+/**
+ * write PCM part to file
+ * @param path
+ * @param wave
+ * @return 0->OK, -1->Error
+ */
+int write_PCM(char *path, Wave *wave);
+
 #endif

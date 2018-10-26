@@ -15,6 +15,7 @@ int write_wave(char *path, Wave *wave) {
         data = data->next;
     }
     log_v("File saved");
+    return 0;
 }
 
 void write_header(FILE *f, WaveHeader *header) {
@@ -44,4 +45,27 @@ void write_data(FILE *f, WaveData *data) {
     fwrite(&data->data_size, sizeof(uint32), 1, f);
     fwrite(data->data, data->data_size, 1, f);
     log_v("Chunk saved");
+}
+
+int write_PCM(char *path, Wave *wave) {
+    FILE *f = fopen(path, "wb");
+    if (!f) {
+        log_e("Fail to write file");
+        return -1;
+    }
+    log_v("Saving raw PCM file...");
+    WaveData *data = wave->data;
+    while (!(data->data_chunk_header[0] == 'd' &&
+             data->data_chunk_header[1] == 'a' &&
+             data->data_chunk_header[2] == 't' &&
+             data->data_chunk_header[3] == 'a')) {
+        data = data->next;
+        if (!data) {
+            log_w("no available data to save");
+            return -1;
+        }
+    }
+    fwrite(data->data, data->data_size, 1, f);
+    log_v("File saved");
+    return 0;
 }
