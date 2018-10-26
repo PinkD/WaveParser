@@ -11,7 +11,7 @@ add_library(WaveParser
         common_util.c common_util.h
         log.c log.h
         wave_common.c wave_common.h
-        )
+        wave_writer.c wave_writer.h)
 
 link_libraries(WaveParser asound)
 
