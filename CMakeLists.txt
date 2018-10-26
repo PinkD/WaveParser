@@ -9,9 +9,9 @@ add_library(WaveParser
         print_util.c print_util.h
         common_util.c common_util.h
         log.c log.h
+        wave_common.c wave_common.h
+        )
 
-        wave_common.c wave_common.h)
+link_libraries(WaveParser asound)
 
-link_libraries(WaveParser)
-
-add_executable(WaveParser-bin test.c)
+add_executable(WaveParser-bin test.c extenal/play.c extenal/play.h)

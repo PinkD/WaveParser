@@ -1,5 +1,5 @@
-#ifndef MIDIPARSER_COMMON_UTIL_H
-#define MIDIPARSER_COMMON_UTIL_H
+#ifndef WAVEPARSER_COMMON_UTIL_H
+#define WAVEPARSER_COMMON_UTIL_H
 
 #include "base_def.h"
 
