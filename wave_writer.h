@@ -12,9 +12,9 @@
  */
 int write_wave(char *path, Wave *wave);
 
-void write_header(FILE *f, WaveHeader *header);
+void write_wave_header(FILE *f, WaveHeader *header);
 
-void write_data(FILE *f, WaveData *data);
+void write_wave_data(FILE *f, WaveData *data);
 
 /**
  * write PCM part to file

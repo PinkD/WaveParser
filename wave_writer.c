@@ -8,17 +8,17 @@ int write_wave(char *path, Wave *wave) {
         return -1;
     }
     log_v("Saving wav file...");
-    write_header(f, wave->header);
+    write_wave_header(f, wave->header);
     WaveData *data = wave->data;
     while (data) {
-        write_data(f, data);
+        write_wave_data(f, data);
         data = data->next;
     }
     log_v("File saved");
     return 0;
 }
 
-void write_header(FILE *f, WaveHeader *header) {
+void write_wave_header(FILE *f, WaveHeader *header) {
     log_v("Saving wav header...");
     fwrite(header->riff.riff, 4, 1, f);
     fwrite(&header->riff.size, sizeof(uint32), 1, f);
@@ -39,7 +39,7 @@ void write_header(FILE *f, WaveHeader *header) {
     log_v("Header saved");
 }
 
-void write_data(FILE *f, WaveData *data) {
+void write_wave_data(FILE *f, WaveData *data) {
     log_v("Saving wav data chunk...");
     fwrite(data->data_chunk_header, 4, 1, f);
     fwrite(&data->data_size, sizeof(uint32), 1, f);

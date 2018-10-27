@@ -8,21 +8,21 @@ Wave *read_wave(char *path) {
     if (!f) {
         return NULL;
     }
-    WaveHeader *header = read_header(f);
-    WaveData *waveData = read_data(f);
+    WaveHeader *header = read_wave_header(f);
+    WaveData *waveData = read_wave_data(f);
     Wave *wave = malloc(sizeof(Wave));
     wave->header = header;
     wave->data = waveData;
 
     while (waveData) {
         WaveData *d = waveData;
-        waveData = read_data(f);
+        waveData = read_wave_data(f);
         d->next = waveData;
     }
     return wave;
 }
 
-WaveHeader *read_header(FILE *f) {
+WaveHeader *read_wave_header(FILE *f) {
     WaveHeader *header = malloc(sizeof(WaveHeader));
     fread(header->riff.riff, 4, 1, f);
     fread(&header->riff.size, sizeof(uint32), 1, f);
@@ -52,7 +52,7 @@ WaveHeader *read_header(FILE *f) {
     return header;
 }
 
-WaveData *read_data(FILE *f) {
+WaveData *read_wave_data(FILE *f) {
     WaveData *waveData = malloc(sizeof(WaveData));
     size_t result = fread(waveData->data_chunk_header, 4, 1, f);
     if (!result) {

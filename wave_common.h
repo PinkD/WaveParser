@@ -41,8 +41,8 @@ typedef struct {
 
 void free_wave(Wave *wave);
 
-void free_header(WaveHeader *header);
+void free_wave_header(WaveHeader *header);
 
-void free_data(WaveData *data);
+void free_wave_data(WaveData *data);
 
 #endif
