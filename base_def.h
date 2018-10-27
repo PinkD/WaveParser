@@ -1,5 +1,5 @@
-#ifndef WAVEPARSER_BASE_DEF_H
-#define WAVEPARSER_BASE_DEF_H
+#ifndef BASE_DEF_H
+#define BASE_DEF_H
 
 #include <stdint.h>
 

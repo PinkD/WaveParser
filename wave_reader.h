@@ -1,5 +1,5 @@
-#ifndef WAVEPARSER_LIBRARY_H
-#define WAVEPARSER_LIBRARY_H
+#ifndef WAVEPARSER_READER_H
+#define WAVEPARSER_READER_H
 
 #include <stdio.h>
 #include "wave_common.h"
