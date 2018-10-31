@@ -13,6 +13,8 @@ add_library(WaveParser
         wave_common.c wave_common.h
         wave_writer.c wave_writer.h)
 
+# comment the following line to build lib
+
 link_libraries(WaveParser openal)
 
 add_executable(WaveParser-bin test.c extenal/play.c extenal/play.h)

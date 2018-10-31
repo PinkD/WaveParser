@@ -1,8 +1,8 @@
 #ifndef WAVEPARSER_WAVE_WRITER_H
 #define WAVEPARSER_WAVE_WRITER_H
 
-#include "wave_common.h"
 #include <stdio.h>
+#include "wave_common.h"
 
 /**
  * write wave file

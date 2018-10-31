@@ -11,7 +11,7 @@ void free_wave(Wave *wave) {
     }
 }
 
-void free_wave_header(WaveHeader *header){
+void free_wave_header(WaveHeader *header) {
     free(header);
 }
 
