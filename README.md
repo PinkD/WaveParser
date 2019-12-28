@@ -4,7 +4,7 @@ This project is mainly proposed to parse wave file into struct. For example, you
 
 ## Wave file format
 
-You can look up the standard of the midi file format [here](http://soundfile.sapp.org/doc/WaveFormat/)
+You can look up the standard of the wave file format [here](http://soundfile.sapp.org/doc/WaveFormat/)
 
 ## play
 
